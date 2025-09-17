@@ -99,6 +99,25 @@ public class Main {
             System.err.println("Error: " + e.getMessage());
         }
 
+
+        try {
+            System.out.println(director.constructCoterminal(new CoterminalPlanProjectBuilder()));
+        } catch (Exception e) {
+            System.err.println("Error: " + e.getMessage());
+        }
+
+        try {
+            System.out.println(director.constructPractica(new ProfessionProjectBuilder()));
+        } catch (Exception e) {
+            System.err.println("Error: " + e.getMessage());
+        }
+
+        try {
+            System.out.println(director.constructInvestigacion(new ResearchProjectBuilder()));
+        } catch (Exception e) {
+            System.err.println("Error: " + e.getMessage());
+        }
+
         System.out.println("\n" + "=".repeat(60) + "\n");
 
         System.out.println("4. PRUEBAS DE VALIDACION:");
@@ -155,6 +174,25 @@ public class Main {
                     null,
                     null
             );
+            System.out.println("ERROR: Deberia haber fallado!");
+        } catch (Exception e) {
+            System.out.println("Validacion exitosa: " + e.getMessage());
+        }
+
+        System.out.println("\n" + "=".repeat(60) + "\n");
+        System.out.println("5. PRUEBAS DE Dierector Construct:");
+        System.out.println("-------------------------");
+
+
+        try {
+            System.out.println(director.constructInvestigacion(new CoterminalPlanProjectBuilder()));
+            System.out.println("ERROR: Deberia haber fallado!");
+        } catch (Exception e) {
+            System.out.println("Validacion exitosa: " + e.getMessage());
+        }
+
+        try {
+            System.out.println(director.constructInvestigacion(new ProfessionProjectBuilder()));
             System.out.println("ERROR: Deberia haber fallado!");
         } catch (Exception e) {
             System.out.println("Validacion exitosa: " + e.getMessage());
